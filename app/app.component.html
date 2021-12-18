@@ -1,0 +1,29 @@
+<input type="file" (change)="onChange($event.target.files)" />
+<button onclick="showArray()">Show Array Data</button>
+<div>
+  <h3>File Content</h3>
+  <pre> {{ fileContent }} </pre>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Site</th>
+        <th>Date</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of myData">
+        <td>{{ item.site }}</td>
+        <td>{{ item.sdate | date }}</td>
+        <td>{{ item.amount }}</td>
+      </tr>
+      <tr></tr>
+      <tr>
+        <td>Total Rows Updated:</td>
+        <td>{{numFound}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
